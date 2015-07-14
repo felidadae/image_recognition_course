@@ -1,0 +1,64 @@
+/*	
+function testMLP(v,w,  x,d,  g,o,K)
+	delta = 0.000001
+	gradients_v_numeric = zeros (size(v,1), size(v,2))
+	gradients_w_numeric = zeros (size(w,1), size(w,2))
+	mw = [v,w]
+	gradients_mw = [gradients_v, gradients_w]
+	for imw = 1:2
+		for irow = 1:size(v,1)
+			for icolumn = 1:size(v,2)
+				%plus
+				t = v(irow, icolumn)
+				v(irow, icolumn) += delta
+				z = (o ( [g([x 1] * v) 1] * w ));
+				gradients_v(irow, icolumn) = cost(d,z)
+			
+				%minus
+				v(irow, icolumn) = t
+				v(irow, icolumn) -= delta
+				z = (o ( [g([x 1] * v) 1] * w ));
+				gradients_mw(irow, icolumn) -= cost(d,z)
+			
+				gradients_mw(irow, icolumn) /= delta*2	
+			end	
+		end
+	end
+	
+	gradients_v = zeros (size(v,1), size(v,2))
+	gradients_w = zeros (size(w,1), size(w,2))
+	
+	y = [g([x 1] * v) 1];
+	z = o(y * w);
+	
+	delta_z = (d - z)           .* 0.5 .* (1 - z.^2);
+	delta_y = ((w * delta_z')') .* 0.5 .* (1 - y.^2);
+	delta_y = delta_y(1:columns(v));
+	
+	gradients_v = y' * delta_z
+	gradients_w	= 
+	
+*/	
+
+Ludmila i Kuncheva, Combining Pattern Classifiers. Methods and Algorithms, 2004
+	
+	
+
+
+
+iter = 26;
+for iexample = iter:iter+25
+	d = repmat(-1, 1,N_z);
+	d(findIndex(train_set_y(iexample), uniqueYSet)) = 1;
+
+	[v,w,cost] = learnMLP(v,w,  train_set_x(iexample, :),d,   g,o,K);
+	costsPerEpoch(iepoch) += cost;
+end
+iter = iter + 25;
+l_preds = [];
+for iexample = 1:test_set_N
+	l_pred_idx = classifyMLP(v,w,  test_set_x(iexample, :),   g,o);
+	l_preds = [l_preds uniqueYSet(l_pred_idx)];
+end
+errorOnTestingSet = (sum([l_preds != test_set_y'])) /test_set_N*100;
+printf ("Error on test set %f\n%%", errorOnTestingSet)

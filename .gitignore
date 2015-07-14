@@ -1,0 +1,8 @@
+rob_l1/*
+rob_l34/*
+rob_l7/*
+
+NeuralNetwork/train-images.idx3-ubyte
+NeuralNetwork/t10k-images.idx3-ubyte
+NeuralNetwork/train-labels.idx1-ubyte
+NeuralNetwork/t10k-labels.idx1-ubyte

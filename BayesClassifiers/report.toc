@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Usuni\IeC {\k e}cie warto\IeC {\'s}ci odstaj\IeC {\k a}cych ze zbioru danych}{1}
+\contentsline {section}{\numberline {2}Wyb\IeC {\'o}r podzbioru cech do klasyfikacji}{2}
+\contentsline {section}{\numberline {3}Wielko\IeC {\'s}\IeC {\'c} zbioru ucz\IeC {\k a}cego}{3}
+\contentsline {section}{\numberline {4}Dob\IeC {\'o}r parametru h1 dla klasyfikatora z oknem parzena}{3}
+\contentsline {section}{\numberline {5}Zmiana prawdopodobie\IeC {\'n}stw apriori oraz odpowiedni wyb\IeC {\'o}r podzbioru z oryginalnego zbioru ucz\IeC {\k a}cego}{5}
+\contentsline {section}{\numberline {6}Por\IeC {\'o}wnanie wynik\IeC {\'o}w do klasyfikatora 1-NN}{5}
+\contentsline {section}{\numberline {7}Podsumowanie}{6}
